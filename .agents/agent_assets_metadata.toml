@@ -1,0 +1,38 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "NU9CBUrp7sTUm9cFrbpY-"
+uri = "file://PALLDE_PROJECT_COMPLETE_GUIDE.md"
+type = "text"
+title = "Pallde Store - A'dan Z'ye Proje Dokümantasyonu"
+
+[[outputs]]
+id = "r6zcKzYJzz41xYjsSXTq0"
+uri = "file://22_mart_2026_detayli_sistem_raporu.md"
+type = "text"
+title = "22 Mart 2026 Detaylı Sistem Raporu"
+
+[[outputs]]
+id = "XKwsJkKqYYHmYernEUCAB"
+uri = "file://Pallde_Store_22_mart_2026_detayli_sistem_raporu.md"
+type = "text"
+title = "Pallde Store - 22 Mart 2026 Detaylı Sistem Raporu"
+
+[[outputs]]
+id = "zhDAHEiIP_Lgs5prmf8Hq"
+uri = "file://Replit_Proje_Raporu_Pallde_Store_22_mart_2026_detayli_sistem_raporu.md"
+type = "text"
+title = "Replit Proje Raporu - Pallde Store - 22 Mart 2026 Detaylı Sistem Raporu"
+
+[[outputs]]
+id = "Z2N-EGhDrGAVtYrz8D2Tc"
+uri = "file://Pallde_Store_TAM_YEDEK.tar"
+type = "unspecified"
+title = "Pallde Store - Tam Proje Yedeği (1.4 GB)"
+
+[[outputs]]
+id = "LO4ExqUJjlCHUjMNCd6Oh"
+uri = "file://websitesi_kaynak.tar.gz"
+type = "unspecified"
+title = "websitesi_kaynak.tar.gz — Pallde Store Full Sistem Kopyası (1.4 GB)"
