@@ -1,0 +1,19 @@
+"Sen uzman bir Full-Stack Web Geliştiricisisin. Siteme daha önce eklediğin 'Global Piyasa ve Rakip Analizi Yapay Zeka Motorunu' çok daha detaylı, verimli ve profesyonel çalışacak şekilde acilen güncellemeni istiyorum. Önceki sistem tam verimli çalışmıyor, bu yüzden aşağıdaki yeni kuralları ve hata ayıklama (error-handling) mekanizmalarını sisteme entegre et:
+1. Muadil Sayısı ve Bölge Dağılımı Güncellemesi:
+Her ürün için artık 3 değil, 5 adet muadil bulunacak. Toplamda her ürün sayfasında 15 rakip ürün listelenecek (5 Türkiye, 5 ABD, 5 Avrupa).
+2. En Çok Satanlara (Best Sellers) Öncelik Verilmesi:
+SERP API veya Google Shopping API sorgularını güncelleyerek parametrelere filtreler ekle.
+Rakip ürünleri çekerken rastgele ürünler getirme. API sorgusunda ürünleri yorum sayısına (review count) ve puanına (rating) göre yüksekten düşüğe sırala (Sort by highest rating/reviews). Sadece piyasada kendini kanıtlamış, en çok satan benzer ürünleri listeye al.
+3. Ölü Link (404) ve Aktif Satış Kontrolü (Strict Validation):
+Bu çok kritik: Kullanıcıya kesinlikle 404 hatası veren veya stokta olmayan ürün linki gösterilmeyecek.
+Backend tarafına bir URL Validator ve Stock Checker fonksiyonu yaz.
+API'den gelen rakip ürün linkleri veritabanına kaydedilmeden veya ekrana basılmadan önce backend tarafından HTTP request (Head/Get) ile kontrol edilsin. Eğer dönen yanıt 404, 500 gibi hata kodlarıysa veya meta verisinde "out of stock" (stokta yok) uyarısı varsa, o ürünü listeden at ve API'den sıradaki ürünü çek. Sadece HTTP 200 (Başarılı) dönen ve aktif satışta olan linkleri kabul et.
+4. Performans ve Caching (Sayfa Yüklenme Hızını Koruma):
+15 farklı ürünün görsel analizini yapıp, ölü link kontrolü yapıp anlık getirmek siteyi çok yavaşlatır. Bu yüzden sistemi bir Arka Plan Görevi (Background Job / Asenkron İşlem) veya Caching mimarisi ile baştan yaz.
+Rakip analizi verileri her sayfa yenilendiğinde tekrar baştan çekilmesin. İlk analiz yapıldıktan sonra bulunan bu 15 rakip ürün veritabanına (ürün modeline bağlı olarak) kaydedilsin. Sayfaya girildiğinde veritabanından anında yüklensin. Linklerin ve fiyatların güncelliğini korumak için sadece arka planda belirli aralıklarla (örneğin 24 saatte bir) kendini güncelleyen bir script (Cron Job) yaz.
+5. Detaylı Rakip Kartı (UI/UX Güncellemesi):
+Bulunan 15 ürünün Rakip Kartlarında şu anki verilere (Fiyat, Link, Ülke, Kargo Süresi, Sosyal Medya) ek olarak şu bilgileri de ekle:
+Ürünün Piyasada Aldığı Tahmini Puan (Yıldız / Rating)
+Stok Durumu (Aktif Satışta yazısı)
+Kartları ülke bazlı (TR, USA, EU) 3 farklı sekme (Tab) veya yan yana kolonlar halinde çok şık bir Dashboard tasarımı ile göster.
+Bu güncellemeleri yaparken mevcut kodu bozmadan, veritabanı şemasını yeni verileri (Rating, Stock status, 15 items) tutacak şekilde güncelle ve URL doğrulama fonksiyonunu eksiksiz yaz."
