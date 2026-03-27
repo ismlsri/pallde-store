@@ -1,0 +1,17 @@
+
+"Sen uzman bir Full-Stack Web Geliştiricisisin. Sisteme eklediğin URL Doğrulama (Validator) kodu İŞE YARAMIYOR. Hala rakip analizi sonuçlarında tıklandığında 404 hatası veren veya sayfanın bulunamadığı ölü linkler geliyor. Bu kabul edilemez. Sistemi halüsinasyonlardan (LLM URL uydurmasından) arındırmak ve ölü linkleri kesin olarak engellemek için arka plan (backend) mimarisini aşağıdaki 5 KATI KURALA göre acilen yeniden yaz:
+1. LLM Halüsinasyonlarına Kesin Engel (NO FAKE URLS):
+OpenAI, Gemini veya kullandığın LLM modelinin KESİNLİKLE kendi kafasından ürün URL'si üretmesini (guess/generate) yasakla. Rakip ürün linkleri SADECE VE SADECE canlı bir Arama API'sinden (SerpApi Google Shopping, Rainforest API veya benzeri GERÇEK ZAMANLI bir JSON kaynağından) gelmek ZORUNDADIR.
+2. Gelişmiş Anti-Bot ve Deep Validation (Derin Doğrulama) Fonksiyonu:
+Backend'de yazdığın link kontrol kodu (HTTP request) bot korumalarına takılıyor. Yeni bir verifyURL(url) fonksiyonu yaz ve şu kuralları uygula:
+HTTP isteklerine mutlaka gerçek bir tarayıcıyı taklit eden karmaşık User-Agent başlıkları (headers) ekle.
+Yönlendirmeleri (Redirects) takip et (follow redirects). Google arama linklerini doğrudan kaydetme, nihai varış URL'sini (Final Destination URL) bul ve onu kaydet.
+Sadece HTTP Status 200 kodunu kontrol etmek YETMEZ! Çekilen HTML sayfasının body (içerik) kısmında şu kelimelerin geçip geçmediğini (Regex/Includes ile) tara: "404", "Page Not Found", "Aradığınız sayfa bulunamadı", "Currently unavailable", "Out of stock", "Tükendi". Eğer bu kelimelerden biri varsa, o link HTTP 200 dönse bile ÖLÜ KABUL ET ve reddet.
+3. Yedekli Tarama ve 'While Loop' Mantığı (Retry Mechanism):
+Bana her bölge için 5 adet SAĞLAM link lazım. API'den sadece 5 sonuç çekip bırakma. API'den o bölge için en az 15-20 sonuç çek.
+Backend sistemin bir 'While' veya 'For' döngüsü içinde bu sonuçları sırayla verifyURL() fonksiyonuna soksun. İlk 5 adet GEÇERLİ, CANLI ve STOKTA OLAN ürünü bulana kadar döngü devam etsin. 5 sağlam linki bulunca o bölge için aramayı durdur ve veritabanına sadece bu 5 sağlam linki kaydet.
+4. Link Temizleme (URL Sanitization):
+API'den gelen linklerin sonundaki gereksiz takip parametrelerini (örneğin ?gclid=..., &ref=...) temizle. Sadece ürünün temiz (canonical) URL'sini veritabanına yaz.
+5. Frontend Hata Yönetimi:
+Eğer sistem bir bölge için internette 5 sağlam rakip bulamazsa (örneğin sadece 3 tane bulabildiyse), frontend'de asla boş kart veya 404 linki basma. Sadece bulduğu 3 sağlam kartı göstersin. Hata veren hiçbir elementi DOM'a renderlama.
+Bu 5 kuralı eksiksiz kodla. URL doğrulama işlemini asenkron (async/await) arka plan görevine al ki site donmasın. Eski işe yaramayan URL kontrol mekanizmasını sil ve bu yeni kurşun geçirmez (bulletproof) mimariyi entegre et."
