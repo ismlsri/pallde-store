@@ -1,0 +1,14 @@
+"Sen uzman bir Full-Stack Web Geliştiricisisin. Sisteme eklediğimiz Rakip Analiz motorunda 'Avrupa (EU)' bölgesi için sonuçlar '0' dönüyor. Bu sorunun Google Shopping API ülke parametrelerinden ve Avrupa'daki GDPR bot engellemelerinden kaynaklandığını tespit ettik. Avrupa aramalarının eksiksiz çalışması için kodda şu 4 KRİTİK güncellemeyi acilen yap:
+1. Avrupa İçin Spesifik Ülke Hedeflemesi (Country Code Fix):
+Google Shopping API'ye istek atarken 'EU' veya 'Europe' gibi genel geçer bir gl (geolocation) parametresi KULLANMA. Avrupa'yı temsil etmesi için İngiltere (UK/GB) veya Almanya'yı (DE) baz al.
+Öncelikli olarak İngiltere pazarını hedefle: Parametreleri gl=gb ve hl=en olarak ayarla. Para birimini GBP (£) olarak çek.
+Eğer İngiltere'den 5 sonuç çıkmazsa, Fallback (Yedek) olarak hemen Almanya pazarını hedefle: Parametreleri gl=de ve hl=de olarak ayarla. Para birimini EUR (€) olarak çek.
+2. Arama Sorgusu (Query) Optimizasyonu:
+İngiltere için arama yaparken ürün adını tamamen İngilizce e-ticaret terimlerine çevir (Örn: 'Kids house bed 90x190'). Almanya'yı kullanıyorsan Almanca e-ticaret terimlerine çevir (Örn: 'Kinder Hausbett 90x190'). Avrupa aramalarında inç kullanma, ölçüleri 'cm' olarak bırak.
+3. Avrupa Linkleri İçin Doğrulama (Validation) Esnekliği - GDPR Bypass:
+Daha önce yazdığımız 'verifyURL' fonksiyonu Avrupa sitelerinde (GDPR çerez duvarları yüzünden) HTTP 403 (Forbidden) veya 503 yiyor ve çalışan linkleri ölü sanıp eliyor.
+Avrupa (EU/GB/DE) linklerini doğrularken HTTP Body'sini (içeriğini) kazımaya (scrape) ÇALIŞMA.
+Sadece linkin formatını düzelt ve Google Shopping API'nin JSON yanıtında dönen in_stock (stokta) verisine GÜVEN. Google API'den gelen linkleri doğrudan veritabanına kaydet. Replit sunucusunun Avrupa sitelerine HTTP Request atmasını bu bölge için devre dışı bırak.
+4. Detaylı Hata Günlüğü (Error Logging):
+Eğer tüm bu düzeltmelere rağmen Avrupa veya başka bir bölge 0 sonuç döndürürse, backend tarafında console.error veya loglama ile API'ye giden TAM URL'yi (Request URL), dönen JSON yanıtını ve arama kelimesini (Query) yazdır. Böylece API'nin neden boş döndüğünü görebileyim.
+Bu adımları uygulayarak Avrupa (EU) sekmesindeki 0 sonuç hatasını çöz ve 5 adet İngiltere veya Almanya menşeli rakibi ekrana getir."
