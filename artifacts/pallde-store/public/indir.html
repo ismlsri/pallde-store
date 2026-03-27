@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallde Store - Proje Dosyaları İndirme</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e0e0e0;min-height:100vh;padding:40px 20px}
+.container{max-width:800px;margin:0 auto}
+h1{text-align:center;color:#e67e22;font-size:28px;margin-bottom:8px}
+h2{text-align:center;color:#95a5a6;font-size:16px;margin-bottom:30px;font-weight:normal}
+.card{background:#16213e;border:1px solid #2a3a5a;border-radius:12px;padding:20px 24px;margin:12px 0;display:flex;justify-content:space-between;align-items:center;transition:all .2s}
+.card:hover{border-color:#e67e22;transform:translateY(-2px);box-shadow:0 4px 15px rgba(230,126,34,.2)}
+.card-info h3{color:#fff;font-size:17px;margin-bottom:4px}
+.card-info p{color:#7f8c8d;font-size:13px}
+.card-meta{text-align:right;flex-shrink:0;margin-left:20px}
+.size{color:#e67e22;font-size:20px;font-weight:700}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;margin-top:4px}
+.badge-green{background:#27ae60;color:#fff}
+.badge-blue{background:#2980b9;color:#fff}
+.badge-purple{background:#8e44ad;color:#fff}
+.badge-red{background:#e74c3c;color:#fff}
+a.btn{display:inline-block;background:#e67e22;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;transition:all .2s}
+a.btn:hover{background:#d35400;transform:scale(1.05)}
+a.btn-big{padding:14px 30px;font-size:18px;background:#27ae60}
+a.btn-big:hover{background:#219a52}
+.section-title{color:#f39c12;font-size:14px;text-transform:uppercase;letter-spacing:2px;margin:30px 0 10px;padding-left:5px}
+.note{background:#0d1b2a;border:1px solid #2a3a5a;border-radius:8px;padding:16px;margin:25px 0;font-size:13px;line-height:1.7}
+.note h4{color:#e67e22;margin-bottom:8px}
+.note code{background:#16213e;padding:2px 6px;border-radius:3px;color:#4fc3f7;font-size:12px}
+.total{text-align:center;margin-top:30px;padding:15px;background:#0d1b2a;border-radius:8px}
+.total .big{font-size:32px;color:#e67e22;font-weight:700}
+.total .label{color:#7f8c8d;font-size:13px}
+.highlight-card{background:#1a3a1a;border:2px solid #27ae60;border-radius:12px;padding:24px;margin:20px 0;text-align:center}
+.highlight-card h3{color:#27ae60;font-size:22px;margin-bottom:8px}
+.highlight-card p{color:#95a5a6;font-size:14px;margin-bottom:16px}
+.divider{text-align:center;color:#4a5568;margin:30px 0;font-size:13px;position:relative}
+.divider::before,.divider::after{content:'';position:absolute;top:50%;width:35%;height:1px;background:#2a3a5a}
+.divider::before{left:0}
+.divider::after{right:0}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Pallde Store — Proje Dosyaları</h1>
+<h2>25 Mart 2026 — Full Sistem Kopyası</h2>
+
+<div class="highlight-card">
+<h3>TEK DOSYADA TAM KOPYA</h3>
+<p>Tüm kod + 4.028 görsel + konfigürasyon + raporlar — A'dan Z'ye her şey tek dosyada</p>
+<div class="size" style="margin-bottom:12px">1.4 GB</div>
+<span class="badge badge-red" style="margin-bottom:12px;display:inline-block">.tar formatı — macOS/Linux doğrudan açar</span><br>
+<a href="25_Mart_2026_Full_Sistem_Kopyasi_Pallde_Store.tar" class="btn btn-big" download>Tam Kopyayı İndir (1.4 GB)</a>
+</div>
+
+<div class="note">
+<h4>Mac Mini'de Açmak İçin:</h4>
+<ol style="padding-left:20px;margin-top:8px">
+<li>Dosyayı indir</li>
+<li>Terminal aç, bir klasör oluştur: <code>mkdir pallde-store && cd pallde-store</code></li>
+<li>Arşivi aç: <code>tar xf 25_Mart_2026_Full_Sistem_Kopyasi_Pallde_Store.tar</code></li>
+<li>Node.js kur (v20+): <code>brew install node</code></li>
+<li>pnpm kur: <code>npm install -g pnpm</code></li>
+<li>Bağımlılıkları yükle: <code>pnpm install</code></li>
+<li>PostgreSQL kur ve <code>.env</code> dosyasına DATABASE_URL ekle</li>
+<li>Çalıştır: <code>pnpm --filter @workspace/pallde-store run dev</code></li>
+</ol>
+</div>
+
+<div class="section-title">RAPORLAR</div>
+<div class="card">
+<div class="card-info">
+<h3>Detaylı Sistem Raporu (HTML)</h3>
+<p>Projenin A'dan Z'ye tüm teknik dokümantasyonu</p>
+</div>
+<div class="card-meta">
+<a href="Replit_Proje_Raporu_Pallde_Store_22_mart_2026_detayli_sistem_raporu.html" class="btn" target="_blank">Görüntüle</a>
+</div>
+</div>
+
+</div>
+</body>
+</html>
