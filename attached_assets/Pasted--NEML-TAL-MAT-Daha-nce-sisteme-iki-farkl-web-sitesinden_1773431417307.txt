@@ -1,0 +1,188 @@
+ÖNEMLİ TALİMAT:
+
+Daha önce sisteme iki farklı web sitesinden ürün çekildi.
+Şimdi üçüncü bir web sitesinden ürün çekeceğiz.
+
+Kesinlikle şunlara dikkat et:
+
+Önceki iki site ile bu yeni siteyi birbirine karıştırma.
+
+Bundan sonra sisteme çekilecek her farklı web sitesi için ayrı bir ANA BAŞ KATEGORİ oluştur.
+
+Bu ana baş kategorinin adı ürünlerin çekildiği sitenin adı olmalıdır.
+
+Örnek mantık:
+
+site1.com → ana kategori: site1
+
+site2.com → ana kategori: site2
+
+bonchicbaby.com.tr → ana kategori: bonchicbaby
+
+Bu sayede farklı sitelerden gelen ürünler asla birbirine karışmayacak.
+
+Tüm alt kategoriler bu ana kategori altında oluşturulmalıdır.
+
+Örnek yapı:
+
+bonchicbaby
+  Çalışma Masası
+  Gardırop
+  Oyuncak Dolabı
+  Sedir
+  Şifonyer
+  Yatak
+
+Ürünleri eklerken doğru kategori yapısını mutlaka koru.
+
+Şimdi senden şunu istiyorum:
+
+Şu siteyi incele:
+
+https://bonchicbaby.com.tr/urun-kategori/mobilya/
+
+Bu linkteki Mobilya kategorisini ve alt kategorileri olan:
+
+Çalışma Masası
+
+Gardırop
+
+Oyuncak Dolabı
+
+Sedir
+
+Şifonyer
+
+Yatak
+
+kategorilerindeki tüm ürünleri, daha önce yaptığın gibi al ve ayrıca bizim sitemize ekle.
+
+Bunu yaparken şu kurallara dikkat et:
+
+1 — Tüm ürünleri eksiksiz çek
+
+Her ürün için şunların tamamını al:
+
+tüm görseller
+
+fiyat bilgisi
+
+ürün başlığı
+
+ürün açıklamasının tamamı
+
+Hiçbir ürünü atlama.
+
+2 — Görselleri eksiksiz çek
+
+Görselleri çekerken dikkatli ol.
+
+Site seni engellemeye çalışsa bile bunu aş ve:
+
+tüm görselleri çek
+
+eksik görsel bırakma
+
+yüksek kalite görselleri al
+
+3 — Ürün açıklamalarını temizle
+
+Ürün açıklamalarını çekerken:
+
+Açıklamalarda şunları görmek istemiyorum:
+
+Türkiye ile ilgili bilgiler
+
+eski markanın adı
+
+eski şirket bilgileri
+
+eski site adı
+
+telefon
+
+e-posta
+
+adres
+
+iletişim bilgileri
+
+Eski markaya ait hiçbir bilgi kalmamalı.
+
+Açıklamalar temiz ve yeni siteye uygun hale getirilmeli.
+
+4 — Ürünlerin orijinal linkini gizli ekle
+
+Her ürün için:
+
+Ürünün geldiği orijinal ürün linkini sakla.
+
+Ama:
+
+bu link müşteriye görünmemeli
+
+sadece benim görebileceğim bir admin alanında bulunmalı
+
+Amaç gerektiğinde eski sitedeki ürünü kolayca bulabilmek.
+
+5 — Stok kodlarını özel formatta oluştur
+
+Tüm ürünlerin stok kodu şu formatta olmalı:
+
+siteadı + eski ürün stok kodu
+
+Örnek:
+
+bonchicbaby-12345
+
+Eğer ürün sayfasında stok kodu görünüyorsa onu kullan.
+
+Eğer görünmüyorsa ürünü tanımlayabilecek mantıklı bir referans kodu oluştur.
+
+Ama mümkün olduğunca orijinal stok kodunu kullanmaya çalış.
+
+6 — Kategori yapısını doğru oluştur
+
+Ana kategori:
+
+bonchicbaby
+
+Alt kategoriler:
+
+Çalışma Masası
+
+Gardırop
+
+Oyuncak Dolabı
+
+Sedir
+
+Şifonyer
+
+Yatak
+
+Tüm ürünleri doğru kategorilere yerleştir.
+
+7 — Görevi eksiksiz tamamla
+
+Görevi yarım bırakma.
+
+Şunların hepsi eksiksiz olmalı:
+
+tüm ürünler
+
+tüm görseller
+
+tüm fiyatlar
+
+temiz açıklamalar
+
+doğru kategori
+
+stok kodları
+
+gizli kaynak linkleri
+
+Hiçbir veri eksik kalmamalı.
+
+Görevi sorunsuz şekilde tamamla.
