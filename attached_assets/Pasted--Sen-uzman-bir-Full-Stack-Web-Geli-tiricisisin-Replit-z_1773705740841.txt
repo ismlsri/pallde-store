@@ -1,0 +1,24 @@
+"Sen uzman bir Full-Stack Web Geliştiricisisin. Replit üzerinde geliştirmekte olduğum mevcut e-ticaret/ürün siteme çok detaylı, kapsamlı ve spesifik yeni özellikler eklemeni istiyorum. Lütfen aşağıdaki tüm maddeleri eksiksiz, atlamadan ve adım adım kodla:
+1. Dinamik USD/TL Kuru Gösterimi (Global Header İşlevi):
+Sitenin en üst kısmına (Header'ın üstüne, sticky/sabit bir bar olarak) canlı USD/TL kurunu ekle.
+Kur verisi her zaman güncel olmalı (Bunun için ücretsiz ve güvenilir bir döviz API'si kullan, örneğin Frankfurter API, ExchangeRate-API veya TCMB).
+Gösterim formatı şu şekilde olmalı: Güncel Kur: 1 USD = [Kur] TL | Son Güncelleme: [Tarih ve Saat] | Kaynak: [Kaynak Adı - Tıklanabilir Link]. Link tıklandığında kaynağın orijinal web sitesine gitmeli.
+2. Ürün Detay Sayfası Düzenlemesi (Benzer Ürünlerin Kaldırılması):
+Bir ürünün detayına (ürün sayfasına) girildiğinde, sistemde şu an var olan "Benzer Ürünler" (Similar Products) kısmını tamamen kaldır. Sayfada site içi benzer ürünler kesinlikle gösterilmeyecek.
+3. Yapay Zeka Destekli Global Muadil ve Rakip Analiz Sistemi (En Önemli Kısım):
+Ürün detay sayfasında, ürün bilgilerinin altına "Global Piyasa ve Rakip Analizi" adında yepyeni ve geniş bir bölüm ekle.
+Sistem, veritabanımdaki her bir ürünün görselini (Google Cloud Vision API, OpenAI Vision veya benzeri bir Image Analysis API kullanarak) analiz edecek. Tasarım, kalite, özellik ve boyut olarak en çok benzeyen muadillerini internetten tarayacak (Bunun için Google Shopping API / SERP API entegrasyonu yazmalısın).
+Her ürün için zorunlu olarak şu 3 bölgeden muadiller bulunup gösterilecek:
+Türkiye'den 3 Muadil Ürün
+Amerika'dan (USA) 3 Muadil Ürün
+Avrupa'dan (EU) 3 Muadil Ürün
+Bulunan bu 9 adet rakip/muadil ürünün her biri birer "Rakip Kartı" (Competitor Card) olarak listelenecek.
+Her bir Rakip Kartı içerisinde ŞU BİLGİLER EKSİKSİZ YER ALACAK:
+Rakip Ürünün Ülkesi (TR, USA veya EU bayrağı/ikonu ile)
+Rakip Ürünün Güncel Fiyatı (Kendi para birimi ve TL karşılığı ile)
+Rakip Ürüne Giden Orijinal Satın Alma/Ürün Bağlantı Linki (Tıklanabilir)
+Tahmini Kargolama/Teslimat Süresi
+Satıcının / Rakip Firmanın Sosyal Medya Hesap Linkleri (Instagram, vb. bulunabiliyorsa)
+Bu tabloyu/bölümü; müşteriye alternatif sunarken ve teklif verirken benim piyasa koşullarını, rakiplerin fiyatlarını ve teslimat sürelerini tek ekranda görebileceğim profesyonel bir B2B/Dashboard UI tasarımıyla yap.
+Teknik Gereksinimler ve Teslimat:
+Bu çok detaylı ve uzun bir emirdir. Öncelikle veritabanı şemasını (Rakip ürünleri kaydedecek modelleri), ardından API entegrasyonlarını (Kur ve Görsel/Rakip arama API'leri) ve en son Frontend (React/HTML/JS) güncellemelerini yaz. Hiçbir detayı atlama, eksiksiz olarak projeye entegre et."
