@@ -1,0 +1,16 @@
+
+"Sen uzman bir Full-Stack Web Geliştiricisisin. Sisteme eklediğin Rakip Analiz Motorunda kritik bir mimari değişiklik yapmanı istiyorum. Yapay zeka şu anda ürünleri aratırken tek bir uzun açıklama cümlesini (örn: 'Sebastian Çatılı Masif Karyola...') alıp her bölgede aynı şekilde aratıyor. Bu durum ölçü birimi, dil ve pazar farklılıkları yüzünden verimsizliğe yol açıyor. Bu sorunu çözmek için sistemin API'ye istek atmadan önceki aşamasına 'Bölgesel Akıllı Sorgu Üretici (Regional Smart Query Generator)' modülünü ekle. Aşağıdaki kuralları harfiyen uygula:
+1. Üç Farklı Arama Sorgusu (Query) Üretimi:
+Rakip araması yapılmadan önce (SERP veya Shopping API'ye istek atmadan önce), yapay zeka (OpenAI/Gemini) ürünün görselini ve mevcut başlığını/açıklamasını analiz edecek ve zorunlu olarak 3 farklı lokalize edilmiş arama sorgusu (search keyword) üretecek. Her bölge için API'ye o bölgenin kendi sorgusu gönderilecek.
+2. Bölgesel Lokalizasyon Kuralları (Çok Önemli):
+Türkiye (TR) Sorgusu: Ürün adını Türkiye e-ticaret sitelerindeki (Trendyol, Hepsiburada) en popüler anahtar kelimelere göre optimize et. Ölçüler "cm" olarak kalmalı. Uzun cümleler yerine direkt ürün odaklı keywordler kullan (Örn: 'Çatılı masif çocuk montessori yatak 90x190').
+Amerika (USA) Sorgusu: Çeviriyi birebir yapma. Amerikan e-ticaret kültürüne (Amazon, Wayfair) uygun anahtar kelimeler seç. Ölçü birimlerini DÖNÜŞTÜR: 'cm' cinsinden olan ölçüleri matematiksel olarak 'inç (inches)' birimine çevir ve Amerika'daki standart yatak ölçü isimleriyle (Twin size, Full size, Toddler bed vb.) eşleştir. (Örn: 'Solid wood house bed frame twin size').
+Avrupa (EU) Sorgusu: Avrupa pazarındaki ortak e-ticaret arama terimlerini kullan. Dil olarak İngilizce veya genel geçer Avrupa e-ticaret terimlerini seç. Ölçüler "cm" olarak kalmalı. (Örn: 'Wooden cabin bed for kids 90x190 cm').
+3. API İsteklerinin (Requests) Bölgesel Yönlendirilmesi:
+Sadece sorguyu değiştirmekle kalma, SERP/Google Shopping API isteklerini yaparken gl (geolocation) ve hl (language) parametrelerini kesinlikle doğru ayarla.
+Türkiye için: gl=tr, hl=tr ve TR sorgusu kullanılacak.
+Amerika için: gl=us, hl=en ve Amerikan inç/Twin ölçülü sorgu kullanılacak.
+Avrupa için: gl=de (veya uk/fr), hl=en (veya yerel dil) ve Avrupa sorgusu kullanılacak.
+4. Veri İşleme Aşaması:
+Bu 'bölgesel sorgu dönüştürme' işlemini sistemin background (arka plan) job'ına entegre et. Sistem önce 3 farklı kültüre/ölçü birimine göre keywordleri belirlesin, sonra bu 3 farklı keyword ile 3 farklı bölgesel API araması yapsın ve her birinden en iyi/en çok satan 5'er rakip ürünü (toplam 15) bularak sisteme kaydetsin.
+Bu güncelleme sayesinde Amerika'da cm ile arama yapılmasını ve alakasız sonuçların çıkmasını engellemiş olacağız. Kodları bu yeni akış diyagramına göre acilen refactor et."
