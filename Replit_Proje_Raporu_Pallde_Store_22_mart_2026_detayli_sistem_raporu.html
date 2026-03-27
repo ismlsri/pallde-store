@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Replit Proje Raporu - Pallde Store - 22 Mart 2026</title>
+<style>
+:root{--orange:#e67e22;--blue:#2980b9;--purple:#8e44ad;--green:#27ae60;--red:#c0392b;--yellow:#f39c12;--dark:#2c3e50;--light:#ecf0f1;--bg:#fefefe;--text:#333}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--text);background:var(--bg);line-height:1.7;font-size:15px}
+.container{max-width:1100px;margin:0 auto;padding:20px 30px}
+h1{font-size:28px;color:var(--dark);border-bottom:3px solid var(--orange);padding-bottom:10px;margin:30px 0 15px}
+h2{font-size:22px;color:var(--dark);margin:25px 0 12px;border-left:4px solid var(--orange);padding-left:12px}
+h3{font-size:18px;color:#444;margin:20px 0 10px}
+h4{font-size:16px;color:#555;margin:15px 0 8px}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 25px}
+li{margin:4px 0}
+strong{color:#222}
+code{background:#f4f4f4;padding:2px 6px;border-radius:3px;font-size:13px;color:#c0392b;font-family:'Courier New',monospace}
+pre{background:#1e1e1e;color:#d4d4d4;padding:16px 20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.5;margin:12px 0;font-family:'Courier New',monospace}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th{background:var(--dark);color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+td{padding:8px 14px;border-bottom:1px solid #e0e0e0}
+tr:nth-child(even){background:#f8f8f8}
+tr:hover{background:#eef5ff}
+hr{border:none;border-top:2px solid #e0e0e0;margin:30px 0}
+blockquote{background:#fff8e1;border-left:4px solid var(--yellow);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-style:italic}
+.header-box{background:linear-gradient(135deg,var(--dark),#34495e);color:#fff;padding:40px 30px;border-radius:12px;margin-bottom:30px;text-align:center}
+.header-box h1{color:#fff;border:none;font-size:32px;margin:0 0 5px}
+.header-box h2{color:var(--orange);border:none;font-size:24px;margin:5px 0;padding:0}
+.header-box h3{color:#bdc3c7;font-size:18px;margin:5px 0}
+.header-box .meta{color:#95a5a6;font-size:14px;margin-top:15px}
+.cred-box{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#e0e0e0;padding:30px;border-radius:12px;margin:20px 0;border:2px solid var(--orange)}
+.cred-box h1{color:var(--orange);border-color:var(--orange)}
+.cred-box h2{color:#f0c040;border-color:#f0c040}
+.cred-box table{background:transparent}
+.cred-box th{background:#0d1b2a}
+.cred-box td{border-color:#2a3a4a;color:#e0e0e0}
+.cred-box tr:nth-child(even){background:rgba(255,255,255,0.03)}
+.cred-box tr:hover{background:rgba(255,255,255,0.07)}
+.cred-box code{background:#0d1b2a;color:#f0c040}
+.cred-box blockquote{background:rgba(255,255,255,0.05);border-color:var(--orange);color:#bbb}
+.section{margin:30px 0;padding:20px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid #eee}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;color:#fff;margin:2px}
+.badge-orange{background:var(--orange)}
+.badge-blue{background:var(--blue)}
+.badge-purple{background:var(--purple)}
+.badge-green{background:var(--green)}
+.badge-red{background:var(--red)}
+.badge-yellow{background:var(--yellow);color:#333}
+.layout-box{background:#f8f9fa;border:2px dashed #ccc;border-radius:8px;padding:16px 20px;margin:12px 0;font-family:'Courier New',monospace;font-size:13px;white-space:pre;overflow-x:auto;line-height:1.4}
+.yellow-panel{background:#fffde7;border:2px solid #fdd835;border-radius:8px;padding:15px 20px;margin:12px 0}
+.blue-panel{background:#e3f2fd;border:2px solid #42a5f5;border-radius:8px;padding:15px 20px;margin:12px 0}
+.toc{background:#f5f5f5;border-radius:10px;padding:20px 30px;margin:20px 0}
+.toc h2{border:none;padding:0;color:var(--dark)}
+.toc ol{columns:2;column-gap:30px}
+.toc li{margin:6px 0}
+.toc a{color:var(--blue);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:15px 0}
+.stat-card{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:15px;text-align:center}
+.stat-card .num{font-size:28px;font-weight:700;color:var(--orange)}
+.stat-card .label{font-size:13px;color:#777;margin-top:4px}
+.flow-box{background:#f0f4f8;border:1px solid #d0d8e0;border-radius:8px;padding:16px;margin:12px 0}
+.flow-step{display:flex;align-items:center;margin:8px 0}
+.flow-step .step-num{width:32px;height:32px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.flow-step .step-text{margin-left:12px}
+.flow-arrow{text-align:center;color:#999;font-size:20px;margin:2px 0}
+@media print{body{font-size:12px}.container{padding:10px}.header-box{padding:20px}.cred-box{break-inside:avoid}table{font-size:11px}pre{font-size:11px}.section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}}
+@media(max-width:768px){.container{padding:10px 15px}.toc ol{columns:1}.stat-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header-box">
+<h1>REPLİT PROJE RAPORU</h1>
+<h2>PALLDE STORE</h2>
+<h3>Çocuk Mobilyası Ürün Kataloğu &amp; AI Rakip Analiz Platformu</h3>
+<div class="meta">
+<strong>Rapor Tarihi:</strong> 22 Mart 2026 &nbsp;|&nbsp;
+<strong>Platform:</strong> Replit &nbsp;|&nbsp;
+<strong>Teknoloji:</strong> TypeScript, React, Express, PostgreSQL<br>
+<strong>Proje Türü:</strong> Full-Stack Web Uygulaması (pnpm monorepo) &nbsp;|&nbsp;
+<strong>Durum:</strong> <span class="badge badge-green">Aktif Geliştirme</span>
+</div>
+</div>
+
+<div class="toc">
+<h2>İÇİNDEKİLER</h2>
+<ol>
+<li><a href="#b0">Proje Erişim Bilgileri — Tüm Giriş, Link, Şifre ve Anahtarlar</a></li>
+<li><a href="#b1">Replit Nedir?</a></li>
+<li><a href="#b2">Projenin Amacı ve Kapsamı</a></li>
+<li><a href="#b3">Teknik Altyapı</a></li>
+<li><a href="#b4">Tüm Sayfalar ve Ekranlar</a></li>
+<li><a href="#b5">AI Rakip Analizi — Detaylı İşleyiş</a></li>
+<li><a href="#b6">Fiyatlandırma Sistemi</a></li>
+<li><a href="#b7">Veri Yapıları</a></li>
+<li><a href="#b8">Veritabanı</a></li>
+<li><a href="#b9">Çift Dil Sistemi</a></li>
+<li><a href="#b10">Proje İstatistikleri</a></li>
+<li><a href="#b11">Geliştirme Kronolojisi</a></li>
+<li><a href="#b12">Gelecekte Neler Yapılabilir?</a></li>
+</ol>
+</div>
+
+<!-- ==================== BÖLÜM 0 ==================== -->
+<div class="cred-box" id="b0">
+<h1>BÖLÜM 0: PROJE ERİŞİM BİLGİLERİ</h1>
+<p style="font-size:16px;color:var(--orange);">Bu bölüm, projeye erişmek ve üzerinde çalışmak için gereken TÜM bilgileri içerir.</p>
+
+<h2>0.1 Replit Proje Bağlantısı (IDE &amp; Kod Editörü)</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>Replit Proje Linki</strong></td><td><code>https://replit.com/@ismails5434/workspace</code></td></tr>
+<tr><td><strong>Proje Sahibi</strong></td><td><code>ismails5434</code></td></tr>
+<tr><td><strong>Proje Slug</strong></td><td><code>workspace</code></td></tr>
+</table>
+<p>Bu link üzerinden Replit IDE'ye (kod editörü, terminal, önizleme) doğrudan erişilir.</p>
+
+<h2>0.2 Canlı Uygulama (Geliştirme Sunucusu)</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>Ana Uygulama URL</strong></td><td><code>https://fb25041c-fd3a-4b69-8e8e-8d3d7c27f907-00-2qlr9kjj9xrt2.picard.replit.dev/pallde-store</code></td></tr>
+<tr><td><strong>API Sunucusu URL</strong></td><td><code>https://fb25041c-fd3a-4b69-8e8e-8d3d7c27f907-00-2qlr9kjj9xrt2.picard.replit.dev/pallde-store/api/</code></td></tr>
+<tr><td><strong>API Health Check</strong></td><td><code>https://fb25041c-fd3a-4b69-8e8e-8d3d7c27f907-00-2qlr9kjj9xrt2.picard.replit.dev/pallde-store/api/health</code></td></tr>
+<tr><td><strong>Dev Domain</strong></td><td><code>fb25041c-fd3a-4b69-8e8e-8d3d7c27f907-00-2qlr9kjj9xrt2.picard.replit.dev</code></td></tr>
+</table>
+<blockquote>Geliştirme sunucusu URL'leri Replit oturumu yeniden başlatıldığında değişebilir. Yukarıdaki linkler 22 Mart 2026 itibarıyla geçerlidir.</blockquote>
+
+<h2>0.3 Uygulama Giriş Bilgileri (Superadmin)</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>Kullanıcı Adı</strong></td><td><code style="font-size:16px;color:#4fc3f7">superadmin</code></td></tr>
+<tr><td><strong>Şifre</strong></td><td><code style="font-size:16px;color:#4fc3f7">superadmin</code></td></tr>
+<tr><td><strong>Oturum Anahtarı</strong></td><td>localStorage &rarr; <code>pallde_auth_token</code></td></tr>
+<tr><td><strong>Token Formatı</strong></td><td><code>btoa(Date.now().toString())</code> (Base64 zaman damgası)</td></tr>
+<tr><td><strong>Oturum Süresi</strong></td><td>Kalıcı (tarayıcı kapatılsa bile devam eder)</td></tr>
+</table>
+
+<h2>0.4 Veritabanı Erişim Bilgileri (PostgreSQL)</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>Veritabanı Türü</strong></td><td>PostgreSQL (Replit Managed)</td></tr>
+<tr><td><strong>Host</strong></td><td><code>helium</code> (Replit iç ağ)</td></tr>
+<tr><td><strong>Port</strong></td><td><code>5432</code></td></tr>
+<tr><td><strong>Kullanıcı</strong></td><td><code>postgres</code></td></tr>
+<tr><td><strong>Veritabanı Adı</strong></td><td><code>heliumdb</code></td></tr>
+<tr><td><strong>Bağlantı Değişkeni</strong></td><td><code>DATABASE_URL</code> (Replit Secrets'ta saklanır)</td></tr>
+<tr><td><strong>ORM</strong></td><td>Drizzle ORM v0.45.1</td></tr>
+</table>
+<blockquote>Veritabanına yalnızca Replit ortamı içinden erişilebilir. Dışarıdan doğrudan bağlantı yapılamaz.</blockquote>
+
+<h2>0.5 AI (Yapay Zeka) Entegrasyon Bilgileri</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>AI Servisi</strong></td><td>OpenAI GPT-4o</td></tr>
+<tr><td><strong>Erişim Yöntemi</strong></td><td>Replit AI Integrations Proxy</td></tr>
+<tr><td><strong>Base URL Değişkeni</strong></td><td><code>AI_INTEGRATIONS_OPENAI_BASE_URL</code></td></tr>
+<tr><td><strong>API Key Değişkeni</strong></td><td><code>AI_INTEGRATIONS_OPENAI_API_KEY</code></td></tr>
+<tr><td><strong>Model</strong></td><td><code>gpt-4o</code></td></tr>
+<tr><td><strong>API Türü</strong></td><td>OpenAI Responses API (<code>web_search_preview</code> tool ile)</td></tr>
+</table>
+<blockquote>API anahtarı Replit tarafından otomatik sağlanır ve yönetilir. Manuel API anahtarı girmeye gerek yoktur.</blockquote>
+
+<h2>0.6 Döviz Kuru API'si</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>API</strong></td><td>Frankfurter API</td></tr>
+<tr><td><strong>Endpoint</strong></td><td><code>https://api.frankfurter.app/latest?from=USD&amp;to=TRY</code></td></tr>
+<tr><td><strong>Veri Kaynağı</strong></td><td>Avrupa Merkez Bankası (ECB)</td></tr>
+<tr><td><strong>Kimlik Doğrulama</strong></td><td>Gerekli değil (açık API)</td></tr>
+<tr><td><strong>Güncelleme Sıklığı</strong></td><td>Her 5 dakikada bir otomatik</td></tr>
+</table>
+
+<h2>0.7 Port Yapılandırması</h2>
+<table>
+<tr><th>Servis</th><th>Port</th><th>Açıklama</th></tr>
+<tr><td>Pallde Store (Vite Frontend)</td><td>Dinamik (<code>PORT</code> env var)</td><td>React uygulaması</td></tr>
+<tr><td>API Server (Express Backend)</td><td><code>8080</code></td><td>Rakip analizi API'si</td></tr>
+<tr><td>Mockup Sandbox</td><td><code>8081</code></td><td>Bileşen önizleme sunucusu</td></tr>
+</table>
+
+<h2>0.8 Ortam Değişkenleri (Environment Variables)</h2>
+<table>
+<tr><th>Değişken</th><th>Tür</th><th>Açıklama</th></tr>
+<tr><td><code>DATABASE_URL</code></td><td>Secret</td><td>PostgreSQL bağlantı dizesi</td></tr>
+<tr><td><code>AI_INTEGRATIONS_OPENAI_BASE_URL</code></td><td>Secret</td><td>OpenAI proxy URL'si</td></tr>
+<tr><td><code>AI_INTEGRATIONS_OPENAI_API_KEY</code></td><td>Secret</td><td>OpenAI proxy API anahtarı</td></tr>
+<tr><td><code>PORT</code></td><td>Otomatik</td><td>Vite dev server portu (Replit atar)</td></tr>
+<tr><td><code>BASE_PATH</code></td><td>Otomatik</td><td>Uygulama temel yolu (<code>/pallde-store</code>)</td></tr>
+<tr><td><code>PGHOST</code></td><td>Otomatik</td><td>PostgreSQL host (<code>helium</code>)</td></tr>
+<tr><td><code>PGPORT</code></td><td>Otomatik</td><td>PostgreSQL port (<code>5432</code>)</td></tr>
+<tr><td><code>PGUSER</code></td><td>Otomatik</td><td>PostgreSQL kullanıcı (<code>postgres</code>)</td></tr>
+<tr><td><code>PGDATABASE</code></td><td>Otomatik</td><td>PostgreSQL veritabanı (<code>heliumdb</code>)</td></tr>
+<tr><td><code>REPLIT_DB_URL</code></td><td>Otomatik</td><td>Replit Key-Value veritabanı URL'si</td></tr>
+<tr><td><code>REPL_SLUG</code></td><td>Otomatik</td><td>Proje slug'ı (<code>workspace</code>)</td></tr>
+<tr><td><code>REPL_OWNER</code></td><td>Otomatik</td><td>Proje sahibi (<code>ismails5434</code>)</td></tr>
+<tr><td><code>REPLIT_DEV_DOMAIN</code></td><td>Otomatik</td><td>Geliştirme sunucusu alan adı</td></tr>
+<tr><td><code>NODE_ENV</code></td><td>Otomatik</td><td>Ortam tipi (development/production)</td></tr>
+</table>
+
+<h2>0.9 Workflow'lar (Çalışan Servisler)</h2>
+<table>
+<tr><th>Workflow Adı</th><th>Komut</th><th>Durum</th></tr>
+<tr><td><code>artifacts/pallde-store: web</code></td><td><code>pnpm --filter @workspace/pallde-store run dev</code></td><td><span class="badge badge-green">Aktif</span></td></tr>
+<tr><td><code>artifacts/api-server: API Server</code></td><td><code>pnpm --filter @workspace/api-server run dev</code></td><td><span class="badge badge-green">Aktif</span></td></tr>
+<tr><td><code>artifacts/mockup-sandbox: Component Preview Server</code></td><td><code>pnpm --filter @workspace/mockup-sandbox run dev</code></td><td><span class="badge badge-green">Aktif</span></td></tr>
+</table>
+
+<h2>0.10 Dil Tercihi Saklama</h2>
+<table>
+<tr><th>Bilgi</th><th>Değer</th></tr>
+<tr><td><strong>localStorage Key</strong></td><td><code>pallde_lang</code></td></tr>
+<tr><td><strong>Varsayılan</strong></td><td><code>tr</code> (Türkçe)</td></tr>
+<tr><td><strong>Seçenekler</strong></td><td><code>tr</code> (Türkçe), <code>en</code> (İngilizce)</td></tr>
+</table>
+
+<h2>0.11 Vite Proxy Yapılandırması</h2>
+<pre>Frontend İsteği:  /pallde-store/api/competitor-analysis
+                        │
+                        ▼ (Vite proxy yeniden yazma)
+Backend İsteği:   http://localhost:8080/api/competitor-analysis</pre>
+<p>Frontend'den yapılan <code>/pallde-store/api/</code> ile başlayan tüm istekler otomatik olarak <code>localhost:8080/api/</code> adresine yönlendirilir.</p>
+</div>
+
+<!-- ==================== BÖLÜM 1 ==================== -->
+<div class="section" id="b1">
+<h1>BÖLÜM 1: REPLİT NEDİR?</h1>
+
+<h2>1.1 Genel Tanım</h2>
+<p>Replit, tarayıcı tabanlı bir entegre geliştirme ortamıdır (IDE). Bilgisayarınıza herhangi bir yazılım kurmadan, doğrudan tarayıcınızdan kod yazmanıza, çalıştırmanıza ve yayınlamanıza olanak tanır. Bulut üzerinde çalışan Linux container'ları kullanır.</p>
+
+<h2>1.2 Replit'in Sunduğu Hizmetler</h2>
+<ul>
+<li><strong>Kod Editörü:</strong> Tarayıcıda çalışan tam özellikli kod editörü</li>
+<li><strong>AI Asistan (Replit Agent):</strong> Projelerinizi oluşturmanıza ve geliştirmenize yardımcı olan yapay zeka asistanı — bizim şu an kullandığımız sistem</li>
+<li><strong>Anlık Önizleme:</strong> Yazdığınız kodu anında görebileceğiniz önizleme paneli</li>
+<li><strong>Veritabanı:</strong> Entegre PostgreSQL veritabanı</li>
+<li><strong>Deployment (Yayınlama):</strong> Projenizi tek tıkla internete yayınlama</li>
+<li><strong>Paket Yönetimi:</strong> npm/pnpm/pip gibi paket yöneticileri ile kütüphane kurulumu</li>
+<li><strong>AI Entegrasyonları:</strong> OpenAI, Anthropic gibi AI servislerine proxy üzerinden erişim — API anahtarı gerekmez</li>
+<li><strong>Ortam Değişkenleri:</strong> Güvenli bir şekilde API anahtarları ve gizli bilgiler saklama</li>
+<li><strong>Workflow Sistemi:</strong> Uzun süre çalışan süreçleri (sunucular, geliştirme araçları) yönetme</li>
+<li><strong>Canvas Panosu:</strong> Görsel içerik, diyagram ve canlı web önizlemeleri için çalışma alanı</li>
+</ul>
+
+<h2>1.3 Bu Projede Replit Nasıl Kullanıldı?</h2>
+<ul>
+<li><strong>3 Workflow</strong> çalışıyor: Frontend (pallde-store), Backend (API Server), Mockup Sandbox</li>
+<li><strong>PostgreSQL veritabanı</strong> rakip analizi cache'i için kullanılıyor</li>
+<li><strong>AI Entegrasyonu</strong> üzerinden OpenAI GPT-4o'ya erişim sağlanıyor (API anahtarı Replit tarafından yönetiliyor)</li>
+<li><strong>Replit Agent</strong> tüm kodu yazdı, test etti ve hata ayıkladı</li>
+<li><strong>Ortam değişkenleri:</strong> <code>AI_INTEGRATIONS_OPENAI_BASE_URL</code>, <code>AI_INTEGRATIONS_OPENAI_API_KEY</code>, <code>DATABASE_URL</code>, <code>PORT</code>, <code>BASE_PATH</code></li>
+</ul>
+</div>
+
+<!-- ==================== BÖLÜM 2 ==================== -->
+<div class="section" id="b2">
+<h1>BÖLÜM 2: PROJENİN AMACI VE KAPSAMI</h1>
+
+<h2>2.1 Ne Yapıyor?</h2>
+<p>Bu platform, çocuk mobilyası ve oyun ekipmanı sektöründe faaliyet gösteren <strong>11 farklı üretici/markadan yaklaşık 1.500 ürünü</strong> tek bir dijital katalogda toplayan, AI destekli rakip analizi yapabilen, superadmin-korumalı bir B2B ürün yönetim platformudur.</p>
+
+<h2>2.2 Kimler İçin?</h2>
+<ul>
+<li><strong>Pallde şirket yöneticileri</strong> — Ürün fiyatlandırma, rakip analizi, tedarikçi bilgileri</li>
+<li><strong>Toptan alıcılar</strong> — Kademe bazlı fiyatlandırma ile büyük siparişler</li>
+<li><strong>Ürün yöneticileri</strong> — Global pazar karşılaştırması, fiyat konumlandırma</li>
+</ul>
+
+<h2>2.3 Bu Proje İle Neler Yapılabilir?</h2>
+<ol>
+<li><strong>Ürün Kataloğu Görüntüleme:</strong> 1.500 ürün, 4.022 görsel, 11 marka, 75 kategori</li>
+<li><strong>Dinamik Fiyatlandırma:</strong> Sepet toplamına göre otomatik kademe (Satış &rarr; Toptan &rarr; Toplu)</li>
+<li><strong>AI Rakip Analizi:</strong> Herhangi bir ürün için Türkiye, ABD ve Avrupa'da gerçek rakip ürünleri bulma</li>
+<li><strong>Canlı Döviz Kuru:</strong> USD/TRY kuru anlık takip</li>
+<li><strong>Çift Dil Desteği:</strong> Tüm arayüz Türkçe ve İngilizce</li>
+<li><strong>Üretici Yönetimi:</strong> 11 üreticinin tam iletişim bilgileri, sosyal medya, vergi numaraları</li>
+<li><strong>Sepet Yönetimi:</strong> Ürün ekleme, çıkarma, miktar değiştirme, kademe takibi</li>
+<li><strong>Maliyet Analizi:</strong> Her ürünün üretim maliyeti, çarpanları ve tüm kademe fiyatları</li>
+</ol>
+
+<h2>2.4 Veri Kaynakları (Scrape/Compile Edilen Siteler)</h2>
+<table>
+<tr><th>Kaynak</th><th>Tür</th><th>Ülke</th><th>Platform</th></tr>
+<tr><td>pallde.com</td><td>Ana marka</td><td>Türkiye</td><td>Custom</td></tr>
+<tr><td>thelittleconcept.com</td><td>Türk mobilya</td><td>Türkiye</td><td>Custom</td></tr>
+<tr><td>bonchicbaby.com.tr</td><td>Türk mobilya</td><td>Türkiye</td><td>Custom</td></tr>
+<tr><td>cedarworks.com</td><td>ABD oyun ekipmanı</td><td>ABD</td><td>Custom</td></tr>
+<tr><td>woodandhearts.com</td><td>Tırmanma ekipmanı</td><td>Ukrayna</td><td>Shopify</td></tr>
+<tr><td>communityplaythings.com</td><td>Sınıf mobilyası</td><td>ABD</td><td>Sitecore CMS</td></tr>
+<tr><td>plywoodproject.com</td><td>Mobilya</td><td>Polonya</td><td>Shopify</td></tr>
+<tr><td>woodandroom.net</td><td>Mobilya</td><td>Ukrayna</td><td>Shopify</td></tr>
+<tr><td>SABOconcept (Etsy)</td><td>Ahşap oyuncak</td><td>Ukrayna</td><td>Etsy</td></tr>
+<tr><td>WoodenEducationalToy (Etsy)</td><td>Eğitici oyuncak</td><td>İsrail</td><td>Etsy</td></tr>
+<tr><td>WoodjoyCollection (Etsy)</td><td>Mobilya</td><td>Romanya</td><td>Etsy</td></tr>
+</table>
+</div>
+
+<!-- ==================== BÖLÜM 3 ==================== -->
+<div class="section" id="b3">
+<h1>BÖLÜM 3: TEKNİK ALTYAPI</h1>
+
+<h2>3.1 Mimari Genel Bakış</h2>
+<pre>┌─────────────────────────────────────────────────────────┐
+│                    KULLANICI (Tarayıcı)                  │
+│                                                         │
+│  ┌─────────────────┐    ┌────────────────────────────┐  │
+│  │  Login Sayfası   │    │   Ana Uygulama (React)     │  │
+│  │  (superadmin)    │───▸│   - Katalog                │  │
+│  └─────────────────┘    │   - Ürün Detay             │  │
+│                         │   - Sepet                   │  │
+│                         │   - Rakip Analiz            │  │
+│                         └──────────┬─────────────────┘  │
+└────────────────────────────────────┼─────────────────────┘
+                                     │ HTTP (Vite Proxy)
+                                     ▼
+┌─────────────────────────────────────────────────────────┐
+│                  API SUNUCUSU (Express 5)                │
+│                     Port: 8080                           │
+│                                                         │
+│  ┌─────────────┐  ┌──────────────────────────────────┐  │
+│  │ Health Check │  │  Rakip Analizi Endpoint'i        │  │
+│  │ GET /health  │  │  POST /api/competitor-analysis   │  │
+│  └─────────────┘  │  GET  /api/competitor-analysis/:  │  │
+│                   └──────────┬───────────────────────┘  │
+└──────────────────────────────┼───────────────────────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+   │  PostgreSQL   │  │  OpenAI API  │  │ Frankfurter  │
+   │  (Drizzle)    │  │  (GPT-4o +   │  │  API (ECB)   │
+   │  24s cache    │  │  Web Search) │  │  Döviz Kuru  │
+   └──────────────┘  └──────────────┘  └──────────────┘</pre>
+
+<h2>3.2 Teknoloji Yığını (Tech Stack)</h2>
+
+<h3>Frontend</h3>
+<table>
+<tr><th>Teknoloji</th><th>Kullanım Amacı</th><th>Versiyon</th></tr>
+<tr><td>React</td><td>Kullanıcı arayüzü framework'ü</td><td>18+</td></tr>
+<tr><td>Vite</td><td>Geliştirme sunucusu ve build aracı</td><td>7.3.1</td></tr>
+<tr><td>TypeScript</td><td>Tip güvenli JavaScript</td><td>5.9.3</td></tr>
+<tr><td>Tailwind CSS</td><td>Utility-first CSS framework'ü</td><td>v4</td></tr>
+<tr><td>shadcn/ui</td><td>UI bileşen kütüphanesi</td><td>-</td></tr>
+<tr><td>wouter</td><td>Hafif sayfa yönlendirme</td><td>-</td></tr>
+<tr><td>React Query</td><td>Sunucu state yönetimi</td><td>-</td></tr>
+<tr><td>lucide-react</td><td>İkon kütüphanesi</td><td>-</td></tr>
+</table>
+
+<h3>Backend</h3>
+<table>
+<tr><th>Teknoloji</th><th>Kullanım Amacı</th><th>Versiyon</th></tr>
+<tr><td>Node.js</td><td>JavaScript çalışma ortamı</td><td>24.13.0</td></tr>
+<tr><td>Express</td><td>HTTP sunucu framework'ü</td><td>5.2.1</td></tr>
+<tr><td>Drizzle ORM</td><td>Veritabanı sorgu oluşturucu</td><td>0.45.1</td></tr>
+<tr><td>PostgreSQL</td><td>İlişkisel veritabanı</td><td>Replit managed</td></tr>
+<tr><td>Zod (v4)</td><td>Veri doğrulama</td><td>-</td></tr>
+<tr><td>esbuild</td><td>JavaScript bundler</td><td>0.27.3</td></tr>
+</table>
+
+<h3>AI &amp; Harici Servisler</h3>
+<table>
+<tr><th>Servis</th><th>Kullanım Amacı</th></tr>
+<tr><td>OpenAI GPT-4o (Responses API)</td><td>Sorgu üretimi, web araması, veri zenginleştirme</td></tr>
+<tr><td>OpenAI web_search_preview</td><td>Gerçek zamanlı web araması</td></tr>
+<tr><td>Frankfurter API (ECB)</td><td>Canlı döviz kuru (USD/TRY)</td></tr>
+</table>
+
+<h2>3.3 Monorepo Dosya Yapısı</h2>
+<pre>workspace/
+├── artifacts/
+│   ├── api-server/                     # Backend API sunucusu
+│   │   └── src/routes/
+│   │       ├── competitor-analysis.ts  # ~1000 satır AI pipeline
+│   │       └── health.ts              # Sağlık kontrolü
+│   ├── pallde-store/                   # Ana frontend uygulaması
+│   │   ├── src/
+│   │   │   ├── App.tsx                 # Ana bileşen + routing + auth
+│   │   │   ├── pages/                  # 5 sayfa
+│   │   │   ├── components/             # 10+ bileşen
+│   │   │   ├── data/                   # 1.500 ürün + 11 üretici
+│   │   │   ├── context/                # Sepet + Dil state
+│   │   │   ├── i18n/                   # Çeviriler (TR/EN)
+│   │   │   └── lib/                    # Fiyatlandırma motoru
+│   │   └── public/images/              # 4.022 yerel görsel
+│   └── mockup-sandbox/                 # Bileşen önizleme (port 8081)
+├── lib/
+│   ├── db/                             # PostgreSQL + Drizzle ORM
+│   ├── api-spec/                       # OpenAPI 3.1
+│   ├── api-client-react/               # Otomatik React hook'ları
+│   └── api-zod/                        # Otomatik Zod şemaları
+└── pnpm-workspace.yaml</pre>
+</div>
+
+<!-- ==================== BÖLÜM 4 ==================== -->
+<div class="section" id="b4">
+<h1>BÖLÜM 4: TÜM SAYFALAR VE EKRANLAR</h1>
+
+<h2>4.1 Giriş Sayfası (LoginPage.tsx)</h2>
+
+<h3>Görünüm:</h3>
+<ul>
+<li>Ortada dikey olarak hizalı beyaz kart</li>
+<li>Üstte kilit ikonu (daire içinde)</li>
+<li>"Yönetici Girişi" / "Admin Login" başlığı</li>
+<li>"Devam etmek için giriş yapın" alt başlığı</li>
+<li>Sağ üst köşede TR/EN dil değiştirme butonları</li>
+</ul>
+
+<h3>Form Alanları:</h3>
+<table>
+<tr><th>Alan</th><th>Placeholder</th><th>Tip</th></tr>
+<tr><td>Kullanıcı Adı</td><td>"Kullanıcı adınız"</td><td>text</td></tr>
+<tr><td>Şifre</td><td>"Şifreniz"</td><td>password</td></tr>
+</table>
+
+<h3>Butonlar:</h3>
+<ul>
+<li><strong>"Giriş Yap" / "Sign In"</strong> — Turuncu, tam genişlikte buton</li>
+<li>Giriş sırasında "Giriş yapılıyor…" animasyonu (400ms gecikme)</li>
+</ul>
+
+<hr>
+
+<h2>4.2 Döviz Kuru Çubuğu (ExchangeRateBar.tsx)</h2>
+<p><strong>Konum:</strong> Tüm sayfalarda, Header'ın ÜSTÜNDE, sayfanın en tepesinde yer alır.</p>
+<ul>
+<li><strong>Arka plan:</strong> Koyu gri</li>
+<li><strong>Solda:</strong> "Döviz Kuru" etiketi (yeşil renk)</li>
+<li><strong>Ortada:</strong> <strong>"1 USD = 38.4521 TL"</strong> (bold beyaz)</li>
+<li><strong>Sağda:</strong> Son güncelleme zamanı + Frankfurter API kaynak linki</li>
+<li><strong>Güncelleme:</strong> Her 5 dakikada bir otomatik</li>
+</ul>
+
+<hr>
+
+<h2>4.3 Header (Üst Navigasyon — Header.tsx)</h2>
+
+<h3>Masaüstü Görünüm:</h3>
+<div class="layout-box">[Logo: Pallde Catalog]    [Katalog]  [İletişim]    [TR|EN]  [🛒 Sepet (3)]</div>
+
+<h3>Mobil Görünüm:</h3>
+<div class="layout-box">[Logo: Pallde Catalog]    [TR|EN]  [🛒 Sepet]  [☰ Menü]</div>
+
+<h3>Navigasyon Linkleri:</h3>
+<table>
+<tr><th>Link</th><th>Hedef</th><th>Çeviri (TR/EN)</th></tr>
+<tr><td>Katalog</td><td><code>/</code> (Ana Sayfa)</td><td>Katalog / Catalog</td></tr>
+<tr><td>İletişim</td><td><code>/iletisim</code></td><td>İletişim / Contact</td></tr>
+</table>
+
+<h4>Dil Değiştirici (TR / EN):</h4>
+<ul>
+<li>İki bitişik buton, yuvarlak köşeli kapsül şeklinde</li>
+<li>Aktif dil: turuncu arka plan + beyaz yazı</li>
+<li>Pasif dil: beyaz arka plan + gri yazı</li>
+<li>Tıklandığında anında tüm arayüz çevrilir</li>
+<li>Tercih localStorage'da saklanır (<code>pallde_lang</code>)</li>
+</ul>
+
+<h4>Sepet Butonu:</h4>
+<ul>
+<li>Turuncu arka planlı, beyaz yazılı buton</li>
+<li>ShoppingCart ikonu + "Sepet" yazısı (mobilde yazı gizli)</li>
+<li>Sepette ürün varsa sağ üst köşede kırmızı daire badge (ürün sayısı, max "9+")</li>
+<li>Tıklandığında CartDrawer (sepet çekmecesi) açılır</li>
+</ul>
+
+<h4>Hamburger Menü (Mobil):</h4>
+<ul>
+<li>☰ (Menu ikonu) — menü kapalıyken</li>
+<li>✕ (X ikonu) — menü açıkken</li>
+<li>Tıklandığında tam genişlikte menü açılır</li>
+<li>Herhangi bir linke tıklayınca menü otomatik kapanır</li>
+</ul>
+
+<hr>
+
+<h2>4.4 Ana Sayfa / Katalog (HomePage.tsx)</h2>
+
+<h3>Layout (Masaüstü):</h3>
+<div class="layout-box">┌──────────────────────────────────────────────────────────┐
+│ [Döviz Kuru Çubuğu]                                     │
+│ [Header]                                                 │
+├──────────┬───────────────────────────────────────────────┤
+│ Kategori │  Ürün Kataloğu                               │
+│ Sidebar  │  1.500 ürün  [Tümünü göster]                 │
+│ (sabit)  │                                               │
+│          │  ┌────┐ ┌────┐ ┌────┐ ┌────┐                 │
+│ KATEGORİ │  │Ürün│ │Ürün│ │Ürün│ │Ürün│                 │
+│ LER      │  │ 1  │ │ 2  │ │ 3  │ │ 4  │                 │
+│          │  └────┘ └────┘ └────┘ └────┘                 │
+│ 🗂️ Tümü  │  ┌────┐ ┌────┐ ┌────┐ ┌────┐                 │
+│ 🏠 Pallde │  │Ürün│ │Ürün│ │Ürün│ │Ürün│                 │
+│ 🌿 TLC   │  │ 5  │ │ 6  │ │ 7  │ │ 8  │                 │
+│ 🌸 Bon.. │  └────┘ └────┘ └────┘ └────┘                 │
+│ 🌲 Cedar │                                               │
+│ ❤️ WoodH │                                               │
+│ 🏫 Comm. │                                               │
+├──────────┴───────────────────────────────────────────────┤
+│ [Footer]                                [⬆ Yukarı Çık]  │
+└──────────────────────────────────────────────────────────┘</div>
+
+<h3>Sol Kategori Sidebar (CategorySidebar.tsx):</h3>
+<ul>
+<li><strong>Genişlik:</strong> 256px</li>
+<li><strong>Konum:</strong> Sabit (sticky), sayfayla birlikte kaymaz</li>
+<li><strong>Yükseklik:</strong> Ekran yüksekliğine sığar</li>
+<li><strong>Kaydırma:</strong> Kendi içinde kaydırılabilir — ince scrollbar (4px)</li>
+<li><strong>Yalnızca masaüstünde görünür</strong></li>
+</ul>
+
+<h3>Ürün Grid Responsive Yapısı:</h3>
+<table>
+<tr><th>Ekran</th><th>Sütun Sayısı</th></tr>
+<tr><td>Mobil</td><td>2</td></tr>
+<tr><td>Tablet (sm)</td><td>3</td></tr>
+<tr><td>Masaüstü (lg)</td><td>3</td></tr>
+<tr><td>Geniş ekran (xl)</td><td>4</td></tr>
+</table>
+
+<hr>
+
+<h2>4.5 Ürün Kartı (ProductCard.tsx)</h2>
+<div class="layout-box">┌──────────────────────┐
+│ ┌──────────────────┐ │
+│ │   ÜRÜN GÖRSELİ  │ │  ← kare, object-cover
+│ │ [Toptan]    [+2] │ │  ← kademe badge + görsel sayısı
+│ └──────────────────┘ │
+│ Ürün Adı (2 satır)   │  ← dile göre TR/EN
+│ $̶6̶0̶0̶  $500           │  ← üstü çizili liste + aktif fiyat
+│ [🛒 Sepete Ekle]     │  ← turuncu buton
+└──────────────────────┘</div>
+
+<h3>Etkileşimler:</h3>
+<ul>
+<li><strong>Hover efekti:</strong> Kart hafifçe yukarı kayar + gölge artar</li>
+<li><strong>Görsel hover:</strong> Görsel hafifçe yakınlaşır</li>
+<li><strong>Başlık hover:</strong> Turuncu renge döner</li>
+<li><strong>Buton hover:</strong> Şeffaf turuncu &rarr; dolgu turuncu</li>
+<li><strong>Tıklama:</strong> Ürün detay sayfasına yönlendirir</li>
+<li><strong>Sepete Ekle:</strong> Sayfa navigasyonunu engeller, sepete 1 adet ekler</li>
+</ul>
+
+<h3>Fiyat Renkleri (Kademeye Göre):</h3>
+<table>
+<tr><th>Kademe</th><th>Renk</th><th>Ek</th></tr>
+<tr><td>Satış (sale)</td><td><span class="badge badge-orange">Turuncu</span></td><td>-</td></tr>
+<tr><td>Toptan (wholesale)</td><td><span class="badge badge-blue">Mavi</span></td><td>Badge</td></tr>
+<tr><td>Toplu (bulk)</td><td><span class="badge badge-purple">Mor</span></td><td>Badge + "tahmini"</td></tr>
+</table>
+
+<hr>
+
+<h2>4.6 Ürün Detay Sayfası (ProductDetailPage.tsx)</h2>
+
+<h3>Ana Layout (Masaüstü):</h3>
+<div class="layout-box">[← Geri]
+
+┌──────────────────┬─────────────────────────────────┐
+│   ÜRÜN GÖRSELİ  │ Kategori Adı                     │
+│   (kare)         │ Ürün Başlığı (bold, xl)          │
+│                  │ $̶6̶0̶0̶  $500  [Standart Fiyat]     │
+│  [küçük resimler]│ [−] 1 [+]  [🛒 Sepete Ekle—$500] │
+│  2/5 genişlik    │ [🔗 Orijinal Mağazada Gör]        │
+│                  │ 3/5 genişlik                      │
+└──────────────────┴─────────────────────────────────┘</div>
+
+<h3>Katlanabilir Bölümler:</h3>
+<table>
+<tr><th>Bölüm</th><th>İkon</th><th>Varsayılan</th><th>Stil</th></tr>
+<tr><td>Açıklama</td><td>ℹ️ Info</td><td><strong>Açık</strong></td><td>Beyaz</td></tr>
+<tr><td>Fiyat Kademeleri</td><td>🏷️ Tag</td><td>Kapalı</td><td>Beyaz</td></tr>
+<tr><td>🔒 Admin Bilgisi</td><td>📑 Layers</td><td>Kapalı</td><td>Sarı panel</td></tr>
+<tr><td>🏭 Üretici Bilgileri</td><td>🏭 Factory</td><td>Kapalı</td><td>Mavi panel</td></tr>
+</table>
+
+<div class="yellow-panel">
+<strong>🔒 Admin Bilgisi Paneli (Sarı):</strong><br>
+Üretim maliyeti, liste fiyatı (×6), indirimli fiyat (×5), toptan fiyat (×3), toplu tahmini (×2.5), stok kodu, kaynak URL
+</div>
+
+<div class="blue-panel">
+<strong>🏭 Üretici Bilgileri Paneli (Mavi):</strong><br>
+Şirket adı, web sitesi, ülke, adres, telefon, e-posta, WhatsApp, vergi no, kuruluş yılı, sosyal medya badge'leri (Instagram, Facebook, Pinterest, YouTube, Etsy, LinkedIn), dahili notlar
+</div>
+
+<h3>Diğer Bölümler:</h3>
+<ul>
+<li><strong>Rakip Analizi:</strong> CompetitorAnalysis bileşeni (aşağıda detaylı)</li>
+<li><strong>Benzer Ürünler:</strong> Aynı kategoriden max 4 ürün</li>
+</ul>
+
+<hr>
+
+<h2>4.7 Sepet Çekmecesi (CartDrawer.tsx)</h2>
+<div class="layout-box">┌──────────────────────────────────┐
+│ Sepet (3 ürün)            [X]   │
+├──────────────────────────────────┤
+│ ┌──────────────────────────────┐ │
+│ │ 🛒 Standart Fiyat            │ │  ← kademe durumu
+│ │ Toptan için $2,340 daha ekle │ │  ← sonraki kademe
+│ └──────────────────────────────┘ │
+│ ┌──────────────────────────────┐ │
+│ │ [img] Ürün Adı               │ │
+│ │       $̶6̶0̶0̶ → $500           │ │
+│ │       [−] 2 [+]  $1,000 [🗑️] │ │
+│ └──────────────────────────────┘ │
+├──────────────────────────────────┤
+│ Toplam:                  $1,500  │
+│ [Sepeti Temizle]                 │
+└──────────────────────────────────┘</div>
+
+<h3>Kademe İlerleme Bilgisi:</h3>
+<table>
+<tr><th>Kademe</th><th>İkon</th><th>Renk</th><th>Mesaj</th></tr>
+<tr><td>Satış</td><td>🛒</td><td><span class="badge badge-orange">Amber</span></td><td>"Toptan için $X daha ekleyin"</td></tr>
+<tr><td>Toptan</td><td>⭐</td><td><span class="badge badge-blue">Mavi</span></td><td>"Toplu sipariş için $X daha ekleyin"</td></tr>
+<tr><td>Toplu</td><td>🏆</td><td><span class="badge badge-purple">Mor</span></td><td>"Toplu sipariş aktif"</td></tr>
+</table>
+
+<h3>Butonlar:</h3>
+<ul>
+<li><strong>X (Kapat)</strong> — Çekmeceyi kapatır</li>
+<li><strong>− / +</strong> — Miktar azaltma/artırma</li>
+<li><strong>🗑️ (Çöp Kutusu)</strong> — Ürünü sepetten çıkarır</li>
+<li><strong>"Sepeti Temizle"</strong> — Tüm sepeti boşaltır</li>
+</ul>
+
+<hr>
+
+<h2>4.8 Yukarı Çık Butonu (ScrollToTop.tsx)</h2>
+<ul>
+<li><strong>Konum:</strong> Sağ alt köşe (fixed)</li>
+<li><strong>Görünüm:</strong> Turuncu yuvarlak daire, yukarı ok ikonu</li>
+<li><strong>Görünürlük:</strong> 400px aşağı kaydırılınca belirginleşir</li>
+<li><strong>Hover:</strong> Hafif büyüme efekti + gölge artışı</li>
+<li><strong>Tıklama:</strong> Yumuşak kaydırma ile en üste çıkar</li>
+</ul>
+
+<hr>
+
+<h2>4.9 Footer (Footer.tsx)</h2>
+<ul>
+<li>Koyu arka plan, açık renkli metin</li>
+<li>Sol: "Pallde Catalog" başlığı + açıklama</li>
+<li>Sağ: Kategoriler linki (Arabalı Yatak, İletişim)</li>
+<li>Alt: "© 2025 Pallde Catalog. Tüm hakları saklıdır."</li>
+</ul>
+</div>
+
+<!-- ==================== BÖLÜM 5 ==================== -->
+<div class="section" id="b5">
+<h1>BÖLÜM 5: AI RAKİP ANALİZİ — DETAYLI İŞLEYİŞ</h1>
+
+<h2>5.1 Genel Akış</h2>
+<div class="flow-box">
+<div class="flow-step"><div class="step-num">1</div><div class="step-text"><strong>Faz 1:</strong> GPT-4o &rarr; 3 bölgesel arama sorgusu üretir (TR: Türkçe+cm, USA: İngilizce+inches, EU: İngilizce+cm)</div></div>
+<div class="flow-arrow">&darr;</div>
+<div class="flow-step"><div class="step-num">2</div><div class="step-text"><strong>Faz 2:</strong> OpenAI Responses API + web_search_preview ile canlı web araması (bölge başına 10 aday URL)</div></div>
+<div class="flow-arrow">&darr;</div>
+<div class="flow-step"><div class="step-num">3</div><div class="step-text"><strong>Deep Verify:</strong> TR/USA: HTTP GET + 16 ölü sayfa deseni kontrolü | EU: GDPR bypass (URL pattern doğrulaması)</div></div>
+<div class="flow-arrow">&darr;</div>
+<div class="flow-step"><div class="step-num">4</div><div class="step-text"><strong>Faz 3:</strong> GPT-4o &rarr; Doğrulanmış URL'lerden veri zenginleştirme (isim, fiyat, puan, eşleşme skoru)</div></div>
+<div class="flow-arrow">&darr;</div>
+<div class="flow-step"><div class="step-num">5</div><div class="step-text"><strong>Faz 4:</strong> GPT-4o &rarr; Pazar özeti (2-3 cümle) + PostgreSQL'e kayıt (24 saat cache)</div></div>
+</div>
+
+<h2>5.2 Bölgesel Hedef Siteler</h2>
+
+<h3>Türkiye (TR):</h3>
+<table>
+<tr><th>Site</th><th>Tür</th></tr>
+<tr><td>trendyol.com</td><td>E-ticaret pazaryeri</td></tr>
+<tr><td>hepsiburada.com</td><td>E-ticaret pazaryeri</td></tr>
+<tr><td>n11.com</td><td>E-ticaret pazaryeri</td></tr>
+<tr><td>ciceksepeti.com</td><td>E-ticaret</td></tr>
+<tr><td>*.com.tr</td><td>Tüm .com.tr alan adları</td></tr>
+</table>
+
+<h3>ABD (USA):</h3>
+<table>
+<tr><th>Site</th><th>Tür</th></tr>
+<tr><td>amazon.com</td><td>E-ticaret devi</td></tr>
+<tr><td>etsy.com</td><td>El yapımı ürünler</td></tr>
+<tr><td>wayfair.com</td><td>Mobilya</td></tr>
+<tr><td>target.com</td><td>Perakende</td></tr>
+<tr><td>walmart.com</td><td>Perakende</td></tr>
+<tr><td>potterybarnkids.com</td><td>Çocuk mobilyası</td></tr>
+</table>
+
+<h3>Avrupa (EU) — İngiltere Öncelikli + Almanya Fallback:</h3>
+<table>
+<tr><th>Site</th><th>Ülke</th><th>Öncelik</th></tr>
+<tr><td>amazon.co.uk</td><td>İngiltere</td><td><span class="badge badge-green">Birincil</span></td></tr>
+<tr><td>wayfair.co.uk</td><td>İngiltere</td><td><span class="badge badge-green">Birincil</span></td></tr>
+<tr><td>johnlewis.com</td><td>İngiltere</td><td><span class="badge badge-green">Birincil</span></td></tr>
+<tr><td>argos.co.uk</td><td>İngiltere</td><td><span class="badge badge-green">Birincil</span></td></tr>
+<tr><td>etsy.com/uk</td><td>İngiltere</td><td><span class="badge badge-green">Birincil</span></td></tr>
+<tr><td>amazon.de</td><td>Almanya</td><td><span class="badge badge-yellow">Fallback</span></td></tr>
+<tr><td>otto.de</td><td>Almanya</td><td><span class="badge badge-yellow">Fallback</span></td></tr>
+<tr><td>kidswoodlove.de</td><td>Almanya</td><td><span class="badge badge-yellow">Fallback</span></td></tr>
+</table>
+
+<h2>5.3 URL Doğrulama Sistemi</h2>
+
+<h3>GDPR Bypass (EU Siteleri):</h3>
+<p>EU siteleri cookie consent duvarı nedeniyle sunucu isteklerini reddeder (403/503). Çözüm olarak URL yapısı doğrulanır:</p>
+<table>
+<tr><th>Platform</th><th>URL Deseni</th><th>Örnek</th></tr>
+<tr><td>Amazon</td><td><code>/dp/ASIN</code></td><td>/dp/B0XXXXXXXX</td></tr>
+<tr><td>Etsy</td><td><code>/listing/ID</code></td><td>/listing/1234567890</td></tr>
+<tr><td>Trendyol</td><td><code>-p-ID</code></td><td>-p-1234567890</td></tr>
+<tr><td>Hepsiburada</td><td><code>-pm-</code></td><td>urun-adi-pm-XXXXX</td></tr>
+</table>
+
+<h2>5.4 Önemli Sabitler</h2>
+<table>
+<tr><th>Sabit</th><th>Değer</th><th>Açıklama</th></tr>
+<tr><td>TARGET_PER_REGION</td><td>5</td><td>Bölge başına hedef sonuç</td></tr>
+<tr><td>SEARCH_URLS_PER_REGION</td><td>10</td><td>Aday URL sayısı</td></tr>
+<tr><td>VERIFY_TIMEOUT</td><td>12.000 ms</td><td>URL doğrulama timeout</td></tr>
+<tr><td>VERIFY_BATCH_SIZE</td><td>3</td><td>Paralel doğrulama sayısı</td></tr>
+<tr><td>CACHE_TTL</td><td>24 saat</td><td>Veritabanı cache süresi</td></tr>
+</table>
+
+<h2>5.5 Frontend Arayüzü (CompetitorAnalysis.tsx)</h2>
+
+<h3>Yükleme Aşamaları (45-90 saniye):</h3>
+<div class="flow-box">
+<div class="flow-step"><div class="step-num">1</div><div class="step-text">✓ AI sorgu üretimi (tamamlandı)</div></div>
+<div class="flow-step"><div class="step-num">2</div><div class="step-text">⟳ Canlı web araması (devam ediyor...)</div></div>
+<div class="flow-step"><div class="step-num">3</div><div class="step-text">○ Sonuç doğrulama (bekliyor)</div></div>
+</div>
+
+<h3>Sonuç Gösterimi:</h3>
+<ul>
+<li>3 bölge tab'ı: <span class="badge badge-red">🇹🇷 TR</span> <span class="badge badge-blue">🇺🇸 USA</span> <span class="badge badge-yellow">🇪🇺 EU</span></li>
+<li>AI üretilmiş arama sorguları (genişletilebilir panel)</li>
+<li>Rakip kartları: eşleşme skoru, yıldız puanı, yerel fiyat + TRY, "Doğrulanmış Link" butonu</li>
+<li>Alt bilgi: toplam rakip sayısı + bölge bazında dağılım</li>
+</ul>
+
+<h3>Eşleşme Skoru Renkleri:</h3>
+<table>
+<tr><th>Skor</th><th>Renk</th></tr>
+<tr><td>≥ 80</td><td><span class="badge badge-green">Yeşil</span></td></tr>
+<tr><td>≥ 60</td><td><span class="badge badge-yellow">Sarı/Turuncu</span></td></tr>
+<tr><td>&lt; 60</td><td><span class="badge" style="background:#999">Gri</span></td></tr>
+</table>
+</div>
+
+<!-- ==================== BÖLÜM 6 ==================== -->
+<div class="section" id="b6">
+<h1>BÖLÜM 6: FİYATLANDIRMA SİSTEMİ</h1>
+
+<h2>6.1 Çarpan Tablosu</h2>
+<table>
+<tr><th>Kademe</th><th>Çarpan</th><th>Eşik (Sepet Toplamı)</th><th>Renk</th><th>Açıklama</th></tr>
+<tr><td>Liste Fiyatı</td><td>cost × 6.0</td><td>-</td><td>Üstü çizili gri</td><td>Hiçbir zaman satılmaz</td></tr>
+<tr><td><strong>Satış (Sale)</strong></td><td>cost × 5.0</td><td>&lt; $15.000</td><td><span class="badge badge-orange">Turuncu</span></td><td>Standart perakende</td></tr>
+<tr><td><strong>Toptan (Wholesale)</strong></td><td>cost × 3.0</td><td>≥ $15.000</td><td><span class="badge badge-blue">Mavi</span></td><td>Toptan alım</td></tr>
+<tr><td><strong>Toplu (Bulk)</strong></td><td>cost × 2.5</td><td>≥ $100.000</td><td><span class="badge badge-purple">Mor</span></td><td>Tahmini fiyat etiketi</td></tr>
+</table>
+
+<h2>6.2 Örnek Hesaplama</h2>
+<p>Bir ürünün maliyeti <strong>$100</strong> ise:</p>
+<table>
+<tr><th>Kademe</th><th>Hesaplama</th><th>Fiyat</th></tr>
+<tr><td>Liste</td><td>$100 × 6.0</td><td>$600 (üstü çizili)</td></tr>
+<tr><td>Satış</td><td>$100 × 5.0</td><td><strong>$500</strong></td></tr>
+<tr><td>Toptan</td><td>$100 × 3.0</td><td>$300</td></tr>
+<tr><td>Toplu</td><td>$100 × 2.5</td><td>$250 (tahmini)</td></tr>
+</table>
+</div>
+
+<!-- ==================== BÖLÜM 7 ==================== -->
+<div class="section" id="b7">
+<h1>BÖLÜM 7: VERİ YAPILARI</h1>
+
+<h2>7.1 Ürün Verisi (1.500 Ürün)</h2>
+<table>
+<tr><th>Alan</th><th>Tür</th><th>Açıklama</th><th>Örnek</th></tr>
+<tr><td>id</td><td>string</td><td>Benzersiz ID</td><td>"PLY-042"</td></tr>
+<tr><td>name</td><td>string</td><td>Birincil isim</td><td>"Modern Çocuk Masası"</td></tr>
+<tr><td>name_tr</td><td>string</td><td>Türkçe isim</td><td>"Modern Çocuk Masası"</td></tr>
+<tr><td>name_en</td><td>string</td><td>İngilizce isim</td><td>"Modern Kids Desk"</td></tr>
+<tr><td>price</td><td>number</td><td>Üretim maliyeti (USD)</td><td>120</td></tr>
+<tr><td>category</td><td>string</td><td>Kategori ID'si</td><td>"masa"</td></tr>
+<tr><td>urlPart</td><td>string</td><td>URL slug'ı</td><td>"modern-cocuk-masasi"</td></tr>
+<tr><td>images</td><td>string[]</td><td>Görsel yolları</td><td>["/images/plywoodproject/img1.jpg"]</td></tr>
+<tr><td>description_tr</td><td>string</td><td>Türkçe açıklama</td><td>"Masif ahşap..."</td></tr>
+<tr><td>description_en</td><td>string</td><td>İngilizce açıklama</td><td>"Solid wood..."</td></tr>
+<tr><td>sku</td><td>string</td><td>Stok kodu</td><td>"PLY-042"</td></tr>
+<tr><td>sourceUrl</td><td>string</td><td>Orijinal kaynak</td><td>"https://plywoodproject.com/..."</td></tr>
+</table>
+
+<h2>7.2 Kategori Hiyerarşisi (75 Kategori)</h2>
+<table>
+<tr><th>#</th><th>Marka</th><th>Emoji</th><th>Ülke</th><th>Alt Kategori Sayısı</th></tr>
+<tr><td>1</td><td>Pallde</td><td>🏠</td><td>Türkiye</td><td>2</td></tr>
+<tr><td>2</td><td>The Little Concept</td><td>🌿</td><td>Türkiye</td><td>9</td></tr>
+<tr><td>3</td><td>BonChicBaby</td><td>🌸</td><td>Türkiye</td><td>6</td></tr>
+<tr><td>4</td><td>CedarWorks</td><td>🌲</td><td>ABD</td><td>5</td></tr>
+<tr><td>5</td><td>Wood and Hearts</td><td>❤️</td><td>Ukrayna</td><td>5</td></tr>
+<tr><td>6</td><td>Community Playthings</td><td>🏫</td><td>ABD</td><td>5</td></tr>
+<tr><td>7</td><td>Plywood Project</td><td>🪵</td><td>Polonya</td><td>5</td></tr>
+<tr><td>8</td><td>WoodandRoom</td><td>🛏️</td><td>Ukrayna</td><td>6</td></tr>
+<tr><td>9</td><td>SABOconcept</td><td>🌈</td><td>Ukrayna</td><td>7</td></tr>
+<tr><td>10</td><td>WoodenEducationalToy</td><td>🧩</td><td>İsrail</td><td>10</td></tr>
+<tr><td>11</td><td>WoodjoyCollection</td><td>✨</td><td>Romanya</td><td>3</td></tr>
+</table>
+</div>
+
+<!-- ==================== BÖLÜM 8 ==================== -->
+<div class="section" id="b8">
+<h1>BÖLÜM 8: VERİTABANI</h1>
+
+<h2>8.1 PostgreSQL (Replit Managed)</h2>
+<p><strong>ORM:</strong> Drizzle ORM v0.45.1 &nbsp;|&nbsp; <strong>Şema dosyası:</strong> <code>lib/db/src/schema/competitor-analyses.ts</code></p>
+
+<h2>8.2 Tablo: competitor_analyses</h2>
+<table>
+<tr><th>Sütun</th><th>Tür</th><th>Açıklama</th></tr>
+<tr><td>id</td><td>serial</td><td>Otomatik artan birincil anahtar</td></tr>
+<tr><td>sku</td><td>varchar</td><td>Ürün stok kodu (cache anahtarı)</td></tr>
+<tr><td>product_name</td><td>text</td><td>Ürün adı</td></tr>
+<tr><td>competitors</td><td>jsonb</td><td>Rakip kayıtları dizisi</td></tr>
+<tr><td>regional_queries</td><td>jsonb</td><td>Bölgesel arama sorguları</td></tr>
+<tr><td>summary</td><td>text</td><td>AI pazar özeti</td></tr>
+<tr><td>created_at</td><td>timestamp</td><td>Oluşturulma zamanı</td></tr>
+</table>
+<p><strong>Cache TTL:</strong> 24 saat — aynı SKU için 24 saat içinde tekrar istek gelirse veritabanından döner</p>
+</div>
+
+<!-- ==================== BÖLÜM 9 ==================== -->
+<div class="section" id="b9">
+<h1>BÖLÜM 9: ÇİFT DİL SİSTEMİ</h1>
+
+<h2>9.1 Desteklenen Diller</h2>
+<p><span class="badge badge-red">Türkçe (TR)</span> — Varsayılan &nbsp;&nbsp; <span class="badge badge-blue">İngilizce (EN)</span></p>
+
+<h2>9.2 Çevrilen Metin Grupları</h2>
+
+<h3>Navigasyon:</h3>
+<table>
+<tr><th>Anahtar</th><th>Türkçe</th><th>İngilizce</th></tr>
+<tr><td>catalog</td><td>Katalog</td><td>Catalog</td></tr>
+<tr><td>contact</td><td>İletişim</td><td>Contact</td></tr>
+<tr><td>cart</td><td>Sepet</td><td>Cart</td></tr>
+<tr><td>back</td><td>Geri</td><td>Back</td></tr>
+<tr><td>home</td><td>Ana Sayfa</td><td>Home</td></tr>
+</table>
+
+<h3>Giriş:</h3>
+<table>
+<tr><th>Anahtar</th><th>Türkçe</th><th>İngilizce</th></tr>
+<tr><td>title</td><td>Yönetici Girişi</td><td>Admin Login</td></tr>
+<tr><td>username</td><td>Kullanıcı Adı</td><td>Username</td></tr>
+<tr><td>password</td><td>Şifre</td><td>Password</td></tr>
+<tr><td>submit</td><td>Giriş Yap</td><td>Sign In</td></tr>
+<tr><td>error</td><td>Kullanıcı adı veya şifre hatalı.</td><td>Incorrect username or password.</td></tr>
+</table>
+
+<h3>Katalog:</h3>
+<table>
+<tr><th>Anahtar</th><th>Türkçe</th><th>İngilizce</th></tr>
+<tr><td>title</td><td>Ürün Kataloğu</td><td>Product Catalog</td></tr>
+<tr><td>allProducts</td><td>Tüm Ürünler</td><td>All Products</td></tr>
+<tr><td>showAll</td><td>Tümünü göster</td><td>Show all</td></tr>
+<tr><td>relatedProducts</td><td>Benzer Ürünler</td><td>Related Products</td></tr>
+</table>
+
+<h3>Ürün:</h3>
+<table>
+<tr><th>Anahtar</th><th>Türkçe</th><th>İngilizce</th></tr>
+<tr><td>description</td><td>Açıklama</td><td>Description</td></tr>
+<tr><td>addToCart</td><td>Sepete Ekle</td><td>Add to Cart</td></tr>
+<tr><td>pricingTiers</td><td>Fiyat Kademeleri</td><td>Pricing Tiers</td></tr>
+<tr><td>wholesale</td><td>Toptan Fiyat</td><td>Wholesale Price</td></tr>
+<tr><td>bulkOrder</td><td>Toplu Sipariş</td><td>Bulk Order</td></tr>
+</table>
+
+<h3>Sepet:</h3>
+<table>
+<tr><th>Anahtar</th><th>Türkçe</th><th>İngilizce</th></tr>
+<tr><td>title</td><td>Sepet</td><td>Cart</td></tr>
+<tr><td>empty</td><td>Sepetiniz boş</td><td>Your cart is empty</td></tr>
+<tr><td>total</td><td>Toplam</td><td>Total</td></tr>
+<tr><td>clear</td><td>Sepeti Temizle</td><td>Clear Cart</td></tr>
+</table>
+</div>
+
+<!-- ==================== BÖLÜM 10 ==================== -->
+<div class="section" id="b10">
+<h1>BÖLÜM 10: PROJE İSTATİSTİKLERİ</h1>
+
+<div class="stat-grid">
+<div class="stat-card"><div class="num">~1.500</div><div class="label">Toplam Ürün</div></div>
+<div class="stat-card"><div class="num">4.022</div><div class="label">Ürün Görseli</div></div>
+<div class="stat-card"><div class="num">75</div><div class="label">Kategori</div></div>
+<div class="stat-card"><div class="num">11</div><div class="label">Üretici/Marka</div></div>
+<div class="stat-card"><div class="num">6</div><div class="label">Üretici Ülkesi</div></div>
+<div class="stat-card"><div class="num">2</div><div class="label">Dil (TR/EN)</div></div>
+<div class="stat-card"><div class="num">4</div><div class="label">Fiyat Kademesi</div></div>
+<div class="stat-card"><div class="num">3</div><div class="label">Rakip Analiz Bölgesi</div></div>
+<div class="stat-card"><div class="num">20+</div><div class="label">Hedef E-ticaret Sitesi</div></div>
+<div class="stat-card"><div class="num">24 saat</div><div class="label">Cache Süresi</div></div>
+<div class="stat-card"><div class="num">5 dk</div><div class="label">Döviz Kuru Güncelleme</div></div>
+<div class="stat-card"><div class="num">GPT-4o</div><div class="label">AI Modeli</div></div>
+</div>
+
+<table>
+<tr><th>Metrik</th><th>Değer</th></tr>
+<tr><td>Veritabanı</td><td>PostgreSQL</td></tr>
+<tr><td>Çalışan workflow sayısı</td><td>3</td></tr>
+<tr><td>Toplam sayfa</td><td>5 (Giriş, Katalog, Detay, İletişim, 404)</td></tr>
+<tr><td>Toplam React bileşeni</td><td>10+ (özel) + shadcn/ui kütüphanesi</td></tr>
+<tr><td>Toplam çeviri anahtarı</td><td>~80+</td></tr>
+<tr><td>Node.js versiyonu</td><td>24.13.0</td></tr>
+<tr><td>TypeScript versiyonu</td><td>5.9.3</td></tr>
+</table>
+</div>
+
+<!-- ==================== BÖLÜM 11 ==================== -->
+<div class="section" id="b11">
+<h1>BÖLÜM 11: GELİŞTİRME KRONOLOJİSİ</h1>
+<p>Bu projede sırasıyla şu işler yapıldı:</p>
+<ol>
+<li><strong>Monorepo altyapısı kuruldu</strong> — pnpm workspace, TypeScript, Vite, Express 5</li>
+<li><strong>11 kaynaktan ürün verileri toplandı</strong> — Web scraping ve manuel derleme</li>
+<li><strong>4.022 ürün görseli indirildi</strong> — Tüm görseller yerel olarak saklandı</li>
+<li><strong>Kategori hiyerarşisi oluşturuldu</strong> — 11 marka, 75 kategori, parent-child ilişkisi</li>
+<li><strong>Çift dil sistemi kuruldu</strong> — TR/EN, Context API, localStorage kalıcılığı</li>
+<li><strong>Fiyatlandırma motoru yazıldı</strong> — Maliyet bazlı çarpanlar (×6, ×5, ×3, ×2.5)</li>
+<li><strong>Sepet sistemi geliştirildi</strong> — Dinamik kademe geçişi, çekmece UI, miktar yönetimi</li>
+<li><strong>Döviz kuru takibi eklendi</strong> — Frankfurter API, 5dk otomatik yenileme, koyu çubuk</li>
+<li><strong>Üretici bilgi kartları oluşturuldu</strong> — 11 üreticinin tam iletişim, sosyal medya, vergi bilgileri</li>
+<li><strong>Superadmin kimlik doğrulama eklendi</strong> — localStorage tabanlı, tek kullanıcı</li>
+<li><strong>AI rakip analizi v1 geliştirildi</strong> — Chat completions API (BAŞARISIZ — sahte URL'ler)</li>
+<li><strong>AI rakip analizi v2'ye geçildi</strong> — OpenAI Responses API + web_search_preview (BAŞARILI)</li>
+<li><strong>Deep URL verification eklendi</strong> — 16 ölü sayfa deseni, SSRF koruması, tarayıcı başlıkları</li>
+<li><strong>EU GDPR bypass stratejisi uygulandı</strong> — URL pattern doğrulaması, HTTP kontrolü atlama</li>
+<li><strong>EU iki fazlı arama sistemi kuruldu</strong> — İngiltere öncelikli, Almanya fallback</li>
+<li><strong>Almanca otomatik çeviri eklendi</strong> — generateGermanQuery() fonksiyonu</li>
+<li><strong>Detaylı hata günlüğü sistemi kuruldu</strong> — Her API çağrısı, her URL, her red/kabul loglanır</li>
+<li><strong>Veritabanı cache sistemi eklendi</strong> — 24 saat TTL, SKU bazlı, regional queries jsonb</li>
+<li><strong>Sol sabit kategori sidebar'ı eklendi</strong> — Sticky, kaydırılabilir, hiyerarşik, ince scrollbar</li>
+<li><strong>Yukarı çık butonu eklendi</strong> — Sağ alt köşe, scroll-to-top, animasyonlu görünüm/kaybolma</li>
+<li><strong>Ürün detay sayfası kompakt hale getirildi</strong> — Katlanabilir Section bileşeni, 5 bölüm</li>
+<li><strong>Sayfa üstü scroll düzeltildi</strong> — Ürün sayfasına geçişte sayfa en üstten başlıyor</li>
+</ol>
+</div>
+
+<!-- ==================== BÖLÜM 12 ==================== -->
+<div class="section" id="b12">
+<h1>BÖLÜM 12: BU PROJE İLE GELECEKTE NELER YAPILABİLİR?</h1>
+<ol>
+<li><strong>Ödeme entegrasyonu</strong> — Stripe/iyzico ile gerçek satış</li>
+<li><strong>Kullanıcı yönetimi</strong> — Farklı roller (admin, satış, müşteri)</li>
+<li><strong>Sipariş yönetimi</strong> — Sipariş oluşturma, takip, fatura</li>
+<li><strong>Stok yönetimi</strong> — Gerçek zamanlı stok takibi</li>
+<li><strong>Otomatik fiyat güncelleme</strong> — Rakip fiyatlarına göre dinamik fiyatlama</li>
+<li><strong>E-posta bildirimleri</strong> — Sipariş onayı, fiyat değişikliği uyarıları</li>
+<li><strong>Mobil uygulama</strong> — React Native/Expo ile mobil versiyon</li>
+<li><strong>Arama motoru</strong> — Elasticsearch/Algolia ile gelişmiş arama</li>
+<li><strong>Analytics dashboard</strong> — Satış istatistikleri, popüler ürünler, pazar trendleri</li>
+<li><strong>Çoklu para birimi</strong> — USD, EUR, GBP, TRY arasında anlık çeviri</li>
+<li><strong>PDF katalog üretimi</strong> — Seçilen ürünlerden otomatik PDF katalog</li>
+<li><strong>API açma</strong> — Harici sistemlere ürün verisi paylaşımı</li>
+<li><strong>Otomatik scraping</strong> — Kaynak sitelerden periyodik veri güncelleme</li>
+<li><strong>Karşılaştırma tablosu</strong> — Birden fazla ürünü yan yana karşılaştırma</li>
+<li><strong>Favori listesi</strong> — Kullanıcıların favori ürünleri kaydetmesi</li>
+</ol>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<hr>
+<div style="text-align:center;color:#999;padding:20px 0 40px;font-size:13px">
+<p><em>Bu rapor, 22 Mart 2026 itibarıyla Pallde Store projesinin tüm teknik detaylarını, işlevlerini, butonlarını, ekranlarını, veri yapılarını, AI pipeline'ını ve mimari kararlarını kapsamlı şekilde belgelemektedir.</em></p>
+<p><strong>Rapor Hazırlayan:</strong> Replit AI Agent &nbsp;|&nbsp; <strong>Tarih:</strong> 22 Mart 2026</p>
+</div>
+
+</div>
+</body>
+</html>
